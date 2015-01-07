@@ -2,20 +2,6 @@ import subprocess
 import os
 
 
-def _domp4(urls):
-    for v_link in urls:
-        os.system(
-        )
-
-
-def _domp3(urls, extension):
-    for v_link in urls:
-        os.system(
-            'youtube-dl --extract-audio --audio-format {extension} {v_link}'
-            .format(
-                v_link=v_link, extension=extension))
-
-
 def make(url, extension):
     response_process = subprocess.Popen(
         ['python', 'youParse.py', url],
