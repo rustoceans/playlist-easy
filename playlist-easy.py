@@ -2,20 +2,45 @@ import subprocess
 import os
 
 
-def make(url):
+def _domp4(urls):
+    for v_link in urls:
+        os.system(
+        )
+
+
+def _domp3(urls, extension):
+    for v_link in urls:
+        os.system(
+            'youtube-dl --extract-audio --audio-format {extension} {v_link}'
+            .format(
+                v_link=v_link, extension=extension))
+
+
+def make(url, extension):
     response_process = subprocess.Popen(
         ['python', 'youParse.py', url],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     resp, err = response_process.communicate()
-    for v_link in resp.split():
-        os.system(
-            'youtube-dl --extract-audio --audio-format mp3 {v_link}'.format(
-                v_link=v_link))
+    urls = resp.split()
+    for v_link in urls:
+        if extension == 'mp3':
+            command = 'youtube-dl --extract-audio --audio-format {extension}\
+            {v_link}'.format(
+                v_link=v_link, extension=extension)
+        else:
+            command = 'youtube-dl {v_link}'.format(v_link=v_link)
+        os.system(command)
 
 
 def main():
     url = raw_input('Enter with playlist url: ')
-    make(url)
+    while True:
+        extension = raw_input('Do you wanna mp3 or mp4 files? (mp3/mp4): ')
+        if not extension in ['mp3', 'mp4']:
+            print 'Enter with a valid format!'
+        else:
+            break
+    make(url, extension)
 
 
 if __name__ == "__main__":
