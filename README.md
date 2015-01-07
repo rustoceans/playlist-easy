@@ -31,14 +31,13 @@ And run:
 $ python playlist-easy.py
 ```
 
-That's all. See you!
 
 License
 ----
 
 MIT
 
-**Free Software.**
+**See you!**
 
 [ffmpeg]:http://ffmpeg.org/
 [youtube-dl]:https://github.com/rg3/youtube-dl
