@@ -1,6 +1,8 @@
 # playlist-easy
 
-AA plugin for you make download of many playlist from youtube. Hey, just playlist sure? :)
+A plugin for you make download of many playlist from youtube. Hey, just playlist sure? :)
+
+
 
 ### Python Version
 2.7
