@@ -1,5 +1,6 @@
 """
 Edited by alexfalcucc to python 2.7
+Email: alex.falcucci@gmail.com
 
 Name: youParse.py
 
