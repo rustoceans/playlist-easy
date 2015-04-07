@@ -10,7 +10,8 @@ def make(url, extension):
     urls = resp.split()
     for v_link in urls:
         if extension == 'mp3':
-            command = 'youtube-dl --extract-audio --audio-format {extension}\
+            command = 'youtube-dl -o "/home/alexsander/Downloads/youtube-dl/%(title)s-%(id)s.%(ext)s"\
+            --extract-audio --audio-format {extension}\
             {v_link}'.format(
                 v_link=v_link, extension=extension)
         else:
