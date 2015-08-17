@@ -18,8 +18,8 @@ def make(playlist_name, url, extension):
             os.makedirs(directory)
         if extension == 'mp3':
             command = 'youtube-dl -o "{directory}%(title)s-%(id)s.%(ext)s"\
-            --extract-audio --audio-format --audio-quality  0 {extension}\
-            {v_link}'.format(directory=directory, playlist_name=playlist_name, home=home, v_link=v_link, extension=extension)
+            --extract-audio --audio-format {extension} --audio-quality  0 {v_link}'.format(
+                directory=directory, playlist_name=playlist_name, home=home, v_link=v_link, extension=extension)
         else:
             command = 'youtube-dl {v_link}'.format(v_link=v_link)
         print command
